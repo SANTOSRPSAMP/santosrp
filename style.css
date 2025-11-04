@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rubik:wght@400;500&display=swap');
+
+:root {
+  --accent: #e63946;
+  --bg-dark: #0d0d0d;
+  --gradient: linear-gradient(90deg, #e63946, #ff7b00, #ffcc00);
+}
+
+body {
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  background: var(--bg-dark);
+  color: white;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 80px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+}
+.logo span {
+  color: var(--accent);
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #ccc;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: white;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fgamingbolt.com%2Fwp-content%2Fuploads%2F2021%2F11%2Fgrand-theft-auto-the-trilogy-the-definitive-edition-ps4-image-2-scaled.jpg&f=1&nofb=1") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 2s ease-in;
+}
+
+.hero h1 {
+  font-size: 80px;
+  font-family: 'Orbitron', sans-serif;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 20px rgba(255,255,255,0.2);
+  margin-bottom: 10px;
+  transition: transform 0.3s;
+}
+.hero h1:hover {
+  transform: scale(1.05);
+}
+.hero p {
+  color: #ddd;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: var(--gradient);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.pulse {
+  animation: pulseGlow 2s infinite;
+}
+
+.glow {
+  box-shadow: 0 0 15px #ff5050, 0 0 30px #ff8800;
+  animation: fadeGlow 3s infinite alternate;
+}
+
+/* Sections */
+.section {
+  padding: 120px 10%;
+  text-align: center;
+}
+
+.update-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.update-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  width: 300px;
+  padding: 25px;
+  transition: 0.3s;
+}
+.update-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 15px rgba(230,57,70,0.3);
+}
+
+.donate, .download {
+  background: radial-gradient(circle at top, rgba(255,255,255,0.05), rgba(0,0,0,0.9));
+}
+
+/* Footer */
+footer {
+  background: rgba(0,0,0,0.85);
+  padding: 25px;
+  text-align: center;
+  color: #aaa;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
